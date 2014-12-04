@@ -3,12 +3,15 @@
 <beans>
 	<bean id="parentTriangle" class="spring.demo.Triangle" >
 	     <property name="pointA" ref="pointA"/>
-	
 	</bean>
-	<bean id="triangle" class="spring.demo.Triangle" parent="parentTriangle">
-	    
+	
+	<bean id="shape" class="spring.demo.Triangle" parent="parentTriangle">
 	     <property name="pointB" ref="pointB"></property>
-	     <!-- <property name="pointC" ref="pointC"></property> -->
+	     <property name="pointC" ref="pointC"></property>
+	</bean>
+	
+	<bean id="shap" class="spring.demo.Circle">
+		<property name="pointA" ref="pointA"/>
 	</bean>
 	
 	<bean id="pointA" class="spring.demo.Point" scope="prototype">
