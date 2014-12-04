@@ -48,7 +48,7 @@ public class Triangle implements ApplicationContextAware,BeanNameAware,Shape {
 	}
 
 
-
+	@Override
 	public void draw(){
 		  System.out.println("Point Value is ("+getPointA().getX()+","+getPointA().getY()+")");
 		  System.out.println("Point Value is ("+getPointB().getX()+","+getPointB().getY()+")");
