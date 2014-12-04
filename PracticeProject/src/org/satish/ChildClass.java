@@ -2,7 +2,7 @@ package org.satish;
 
 public class ChildClass extends ParentClaass {
 
-	public void marry() throws Exception{
+	public void marry() {
 		
 		System.out.println("Rosalin");
 	}
