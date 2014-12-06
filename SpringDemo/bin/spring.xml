@@ -10,8 +10,8 @@
 	     <property name="pointC" ref="pointC"></property>
 	</bean>
 	
-	<bean id="shap" class="spring.demo.Circle">
-		<property name="pointA" ref="pointA"/>
+	<bean id="circle" class="spring.demo.Circle">
+		<!-- <property name="pointA" ref="pointA"/> -->
 	</bean>
 	
 	<bean id="pointA" class="spring.demo.Point" scope="prototype">
@@ -30,4 +30,6 @@
 		<property name="y" value="45"></property>
 	</bean>
 	<alias name="triangle" alias="testtriangle"/>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 </beans>             

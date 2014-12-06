@@ -1,5 +1,7 @@
 package spring.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Circle implements Shape {
 	
 	private Point pointA;
@@ -7,7 +9,8 @@ public class Circle implements Shape {
 	public Point getPointA() {
 		return pointA;
 	}
-
+	
+	@Autowired
 	public void setPointA(Point pointA) {
 		this.pointA = pointA;
 	}
