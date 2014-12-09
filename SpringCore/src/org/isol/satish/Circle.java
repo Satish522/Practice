@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class Circle implements Shape  {
 	
 	private Point center;
+
 	@Autowired
 	private MessageSource messageSource;
 	 
