@@ -18,10 +18,10 @@
 	     <property name="pointC" ref="pointC"></property>
 	</bean> -->
 	
-	 <bean id="circle" class="org.isol.satish.Circle">
+	<!--  <bean id="circle" class="org.isol.satish.Circle">
 		
 		
-	</bean> 
+	</bean>  -->
 	
 	<bean id="pointA" class="org.isol.satish.Point">
 		<qualifier type="org.springframework.beans.factory.annotation.Qualifier"  value="circleRelated" />
@@ -40,9 +40,17 @@
 		<property name="x" value="23"></property>
 		<property name="y" value="45"></property>
 	</bean>
-	<!-- <alias name="triangle" alias="testtriangle"/> -->
-	<bean class="org.isol.satish.DrawingApp" id="da"/>
+	 
+	 
 	
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>mymessages</value>
+			</list>
+		</property>
+	</bean>
 	
 	<context:annotation-config/>
 	<context:component-scan base-package="org.isol.satish"></context:component-scan> 

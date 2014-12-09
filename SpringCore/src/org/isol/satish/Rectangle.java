@@ -1,5 +1,9 @@
 package org.isol.satish;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Rectangle implements Shape {
 	
 	private Point pointA;

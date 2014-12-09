@@ -10,13 +10,9 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
-public class DrawingApp  implements BeanFactoryAware{
+public class DrawingApp{
 	
-	
-	private static BeanFactory beanFactory;
-    private String abc="";
-    
-    
+	 
 	/**
 	 * @param args
 	 */
@@ -28,16 +24,8 @@ public class DrawingApp  implements BeanFactoryAware{
 		context.registerShutdownHook();
 		Shape shape=(Shape)context.getBean("circle");
 		shape.draw();
-		System.out.println("Beans are   "+DrawingApp.beanFactory);
-		 
+	 	
 	}
-
-	@Override
-	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		// TODO Auto-generated method stub
-		this.beanFactory=beanFactory;
-		System.out.println("Beans loaded are "+beanFactory);
-	}
-	
+ 
 	 
 }

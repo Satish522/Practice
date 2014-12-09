@@ -1,5 +1,10 @@
 package org.isol.satish;
 
+import org.springframework.stereotype.Component;
+
+
+
+@Component
 public class Point {
  private int x;
  private int y;

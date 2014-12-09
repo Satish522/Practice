@@ -4,26 +4,17 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
- 
-
-
-
-
-
-
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
-
+ 
+ 
 @Component
 public class Circle implements Shape  {
 	
 	private Point center;
+	@Autowired
+	private MessageSource messageSource;
 	 
 	
 	public Point getCenter() {
@@ -34,6 +25,14 @@ public class Circle implements Shape  {
 		this.center = center;
 	}
 	
+	public MessageSource getMessageSource() {
+		return messageSource;
+	}
+	
+	
+	public void setMessageSource(MessageSource messageSource) {
+		this.messageSource = messageSource;
+	}
 	@PostConstruct
 	public void initializeCircle(){
 		System.out.println("Initialize Circle");
@@ -48,8 +47,10 @@ public class Circle implements Shape  {
 	@Override
 	public void draw() {
 		// TODO Auto-generated method stub
-		System.out.println("Drawing Circle.....");
-		System.out.println("Co-ordinates are {"+getCenter().getX()+" , "+getCenter().getY()+"}");
+		System.out.println(this.messageSource.getMessage("drawing", null , "Message not availble", null));
+		System.out.println(this.messageSource.getMessage("coordinates", new Object[]{ center.getX(), center.getY() } , "Message not availble", null));
+		//System.out.println("Co-ordinates are {"+getCenter().getX()+" , "+getCenter().getY()+"}");
+		//System.out.println(this.messageSource.getMessage("greeting", null , "Message not availble", null));
 	}
 	 
 	
