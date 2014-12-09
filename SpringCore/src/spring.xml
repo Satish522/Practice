@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For Qualifier Annotation doctype need to remove  -->
+<!-- <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
+
+<!-- Beans doc type need to put for qualifier annotation  -->
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	
+	
+	<!-- <bean id="parentTriangle" class="org.isol.satish.Triangle" >
+	     <property name="pointA" ref="pointA"/>
+	</bean>
+	
+	<bean id="shape" class="org.isol.satish.Triangle" parent="parentTriangle">
+	     <property name="pointB" ref="pointB"></property>
+	     <property name="pointC" ref="pointC"></property>
+	</bean> -->
+	
+	 <bean id="circle" class="org.isol.satish.Circle">
+		
+		
+	</bean> 
+	
+	<bean id="pointA" class="org.isol.satish.Point">
+		<qualifier type="org.springframework.beans.factory.annotation.Qualifier"  value="circleRelated" />
+		<property name="x" value="12"></property>
+		<property name="y" value="12"></property>
+	</bean>
+	 
+  	<bean id="pointB"  class="org.isol.satish.Point">
+  	
+		<property name="x" value="37"></property>
+		<property name="y" value="456"></property>
+	</bean>
+ 
+	
+	<bean id="center" class="org.isol.satish.Point" >
+		<property name="x" value="23"></property>
+		<property name="y" value="45"></property>
+	</bean>
+	<!-- <alias name="triangle" alias="testtriangle"/> -->
+	<bean class="org.isol.satish.DrawingApp" id="da"/>
+	
+	
+	<context:annotation-config/>
+	<context:component-scan base-package="org.isol.satish"></context:component-scan> 
+	
+	
+</beans>             
