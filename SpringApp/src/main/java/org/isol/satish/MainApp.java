@@ -13,7 +13,7 @@ public class MainApp {
 		
 		ShapeService shapeService= context.getBean("shapeService",ShapeService.class);
 		System.out.println(shapeService.getCircle().getName());
-		shapeService.getCircle().getSize();
+		/*shapeService.getCircle().getSize();*/
 		
 	}
 
