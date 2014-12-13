@@ -5,6 +5,22 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   <artifactId>SpringApp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>org.isol.satish.MainApp</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
   <properties>
 
 		<!-- Generic properties -->
@@ -26,7 +42,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<junit.version>4.12</junit.version>
 
 	</properties>
-	
+	 
 	<dependencies>
 		<!-- Spring and Transactions -->
 		<dependency>
@@ -61,14 +77,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<version>${logback.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-
+		
 		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
+		
 		
 		<!-- Test Artifacts -->
 		<dependency>
