@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Before;
 public class LoggingAspect {
 	
 	
-	@Before("execution(public String getName())")
+	@Before("execution(public * get*())")
 	public void loggingAdvice(){
 		System.out.println("Logging Advice Run ...  Now get method can run");
 	}

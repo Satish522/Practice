@@ -12,4 +12,10 @@ public class Circle {
 	}
 	
 	
+	public void getSize(){
+		System.out.println("Size of circle is 100CM square");
+		 
+	}
+	
+	
 }
