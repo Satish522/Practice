@@ -13,7 +13,7 @@
 	
 	
 	 <bean id="triangle" class="org.isol.satish.model.Triangle" >
-			<property name="name" value="Triangle Name"></property>
+			 <property name="name" value="Triangle Name"></property> 
 		</bean>
 		
 		<bean id="circle" class="org.isol.satish.model.Circle" >
